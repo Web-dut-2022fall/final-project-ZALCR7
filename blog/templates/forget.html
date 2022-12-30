@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forget password</title>
+    <link rel="stylesheet" href="{%static 'css/log.css' %}">
+    <link rel="stylesheet" href="{%static 'css/semantic.css' %}">
+</head>
+<body class="forget">
+    <div class="ui center aligned grid" style="margin-top: 200px">
+        <div class="ui six wide column">
+            <h1 class="ui teal header">JZhang blog-Forget password</h1>
+            <div class="ui segment">
+                <div class="ui content">
+                    <form class="ui form" method="post" action="{%url 'forget'%}">
+                        <div class="field">
+                            <input type="text" name="username" placeholder="Input the user name"><br>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="email" placeholder="Please input the e-mail"><br>
+                        </div>
+                        {{ error }}<br>
+                        <button class="ui fluid large teal button" type="submit">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="shortcut icon" href="{% static 'images/gt_favicon.png' %}">
+    <link rel="stylesheet" href="{%static 'css/log.css' %}">
+    <link rel="stylesheet" href="{%static 'css/semantic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+</head>
+<body class="login">
+    <div class="ui center aligned grid" style="margin-top: 200px">
+        <div class="ui six wide column">
+            <h1 class="ui teal header">JZhang blog-login</h1>
+            <div class="ui segment">
+                <div class="ui content">
+    <form class="ui large form" method="post" action="{%url 'login'%}">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <input type="text" name="username" placeholder="Please input the user name:">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <input type="password" name="password" placeholder="Please input the password: ">
+          </div>
+        </div>
+        {{ error }}<br>
+        <a class="pull-right field" href="{%url 'forget'%}" >Forget the password </a>
+        <button class="ui fluid large teal button" type="submit">Login</button>
+      </div>
+
+      <div class="ui error message"></div>
+    </form>
+
+    <div class="ui message">
+      New to us? <a href="{%url 'register'%}">Register</a>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
